@@ -12,7 +12,7 @@ const OurProducts = () => {
             <h3 className="text-3xl font-bold text-center">Browse Our Products</h3>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 <div>
-                <div className="card  bg-base-100 shadow-xl">
+                <div className="card  bg-base-100 shadow-xl h-96">
   <figure><img src={img1} alt="Shoes" /></figure>
   <div className="rating flex justify-center">
   <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
@@ -28,7 +28,7 @@ const OurProducts = () => {
   </div>
 </div>
                 </div>
-                <div>  <div className="card  bg-base-100 shadow-xl">
+                <div>  <div className="card  bg-base-100 shadow-xl h-96">
   <figure><img src={img2} alt="Shoes" /></figure>
   <div className="rating flex justify-center">
   <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
@@ -44,7 +44,7 @@ const OurProducts = () => {
   </div>
 </div></div>
                 <div> 
-                     <div className="card bg-base-100 shadow-xl">
+                     <div className="card bg-base-100 shadow-xl h-96">
   <figure><img src={img3} alt="Shoes" /></figure>
   <div className="rating flex justify-center">
   <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
@@ -60,7 +60,7 @@ const OurProducts = () => {
   </div>
 </div></div>
                 <div> 
-                     <div className="card bg-base-100 shadow-xl">
+                     <div className="card bg-base-100 shadow-xl h-96">
   <figure><img src={img4} alt="Shoes" /></figure>
   <div className="rating flex justify-center">
   <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
@@ -76,7 +76,7 @@ const OurProducts = () => {
   </div>
 </div></div>
                 <div> 
-                     <div className="card  bg-base-100 shadow-xl">
+                     <div className="card  bg-base-100 shadow-xl h-96">
   <figure><img src={img5} alt="Shoes" /></figure>
   <div className="rating flex justify-center">
   <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
@@ -92,7 +92,7 @@ const OurProducts = () => {
   </div>
 </div></div>
                 <div>  
-                    <div className="card  bg-base-100 shadow-xl">
+                    <div className="card  bg-base-100 shadow-xl h-96">
   <figure><img src={img6} alt="Shoes" /></figure>
   <div className="rating flex justify-center">
   <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
