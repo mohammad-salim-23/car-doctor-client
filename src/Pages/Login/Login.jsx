@@ -3,7 +3,7 @@ import login from '../../assets/images/login/login.svg'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 const Login = () => {
-    const {SignIn} = useContext(AuthContext);
+    const {SignIn,logOut} = useContext(AuthContext);
     const handleLogin=event=>{
         event.preventDefault();
         const form = event.target;
@@ -14,7 +14,9 @@ const Login = () => {
         .then(res=>{
             console.log(res)
         })
-        .then()
+        .error()
+
+       
     }
     return (
         <div>
