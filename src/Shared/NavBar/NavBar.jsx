@@ -2,12 +2,21 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg"
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from 'sweetalert2'
 const NavBar = () => {
 
   const {user,logOut} = useContext(AuthContext);
   const handleLogOut=()=>{
     logOut()
-    .then(()=>{})
+    .then(()=>{
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    })
     .catch()
   }
   const navItems = <>

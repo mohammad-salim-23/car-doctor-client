@@ -2,8 +2,9 @@ import { useContext } from 'react';
 import login from '../../assets/images/login/login.svg'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2'
 const Login = () => {
-    const {SignIn,logOut} = useContext(AuthContext);
+    const {SignIn} = useContext(AuthContext);
     const handleLogin=event=>{
         event.preventDefault();
         const form = event.target;
@@ -13,6 +14,11 @@ const Login = () => {
         SignIn(email,password)
         .then(res=>{
             console.log(res)
+            Swal.fire({
+              title: "Good job!",
+              text: "You clicked the button!",
+              icon: "success"
+            });
         })
         .error()
 

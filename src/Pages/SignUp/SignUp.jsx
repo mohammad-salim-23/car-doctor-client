@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import login from '../../assets/images/login/login.svg'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
-
+import Swal from 'sweetalert2'
 const SignUp = () => {
     const {createUser} = useContext(AuthContext)
     const handleLogin=event=>{
@@ -14,6 +14,11 @@ const SignUp = () => {
        createUser(email,password)
        .then(res=>{
         console.log(res)
+        Swal.fire({
+          title: "Good job!",
+          text: "You clicked the button!",
+          icon: "success"
+        });
        })
        .then()
      
