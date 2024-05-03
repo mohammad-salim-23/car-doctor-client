@@ -11,7 +11,7 @@ const Bookings = () => {
         fetch(url)
         .then(res=>res.json())
         .then(data=>setBookings(data))
-    },[])
+    },[url])
     const handleDelete = _id=>{
         Swal.fire({
             title: "Are you sure?",
@@ -44,6 +44,29 @@ const Bookings = () => {
             }
           });
     }
+    
+    const handleBookingConfirm=_id=>{
+           fetch(`http://localhost:5000/bookings/${_id}`,{
+             method:"PATCH",
+             headers:{
+              'content-type':'application/json'
+             },
+             body:JSON.stringify({status:'confirm'})
+           })
+           .then(res=>res.json())
+           .then(data=>{
+            if(data.modifiedCount>0){
+              // update state
+              const remaining = bookings.filter(booking=>booking._id!==_id);
+              const updateBook = bookings.find(booking._id===_id);
+              const newBookings = [updateBook,...remaining];
+              setBookings(newBookings);
+              
+             
+            }
+           })
+    }
+
     return (
         <div>
             <h2 className="text-5xl">Your Bookings:{bookings.length}</h2>
@@ -70,6 +93,8 @@ bookings.map(booking=><BookingRow
    key={booking._id}
    booking={booking}
    handleDelete={handleDelete}
+   handleBookingConfirm={handleBookingConfirm}
+
 ></BookingRow>)
       }
       
