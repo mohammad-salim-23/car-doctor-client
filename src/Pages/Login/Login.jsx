@@ -1,9 +1,14 @@
 import { useContext } from 'react';
 import login from '../../assets/images/login/login.svg'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2'
-const Login = () => {
+import axios from 'axios';
+const Login = () => 
+  {
+     const navigate = useNavigate();
+     const location = useLocation();
+     console.log(location)
     const {SignIn} = useContext(AuthContext);
     const handleLogin=event=>{
         event.preventDefault();
@@ -13,12 +18,27 @@ const Login = () => {
         const password = form.password.value;
         SignIn(email,password)
         .then(res=>{
+          const logedInUser = res.user;
+          console.log(logedInUser)
+          const user = {email};
+
+                axios.post('http://localhost:5000/jwt',user)
+                .then(res=>{
+                 console.log(res.data);
+                })
+                .catch((error)=>{
+                  console.log(error);
+                })
             console.log(res)
             Swal.fire({
               title: "Good job!",
               text: "You clicked the button!",
               icon: "success"
             });
+
+          // navigate(location?.state ?location?.state: '/')
+          // get access token
+
         })
         .error()
 

@@ -58,11 +58,9 @@ const Bookings = () => {
             if(data.modifiedCount>0){
               // update state
               const remaining = bookings.filter(booking=>booking._id!==_id);
-              const updateBook = bookings.find(booking._id===_id);
+              const updateBook = bookings.find(booking=>booking._id===_id);
               const newBookings = [updateBook,...remaining];
               setBookings(newBookings);
-              
-             
             }
            })
     }
@@ -94,6 +92,7 @@ bookings.map(booking=><BookingRow
    booking={booking}
    handleDelete={handleDelete}
    handleBookingConfirm={handleBookingConfirm}
+  
 
 ></BookingRow>)
       }

@@ -2,6 +2,7 @@
 
 const BookingRow = ({booking,handleDelete,handleBookingConfirm,status}) => {
     const {img,customerName,service,price,date,email,_id} = booking;
+    console.log(status)
     
     return (
         <div>
